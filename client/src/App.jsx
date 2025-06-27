@@ -1,10 +1,19 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
+// import ProjectCard from './components/projectCard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignUpForm from './components/signup';
+import LoginForm from './components/login';
 
 function App() {
   const [count, setCount] = useState(0);
+
+const data = {
+  title: 'Weeding Contribution',
+  description: 'Nonso and Joyful - NoJoy2025',
+  targetAmount: '500',
+  currentAmount: '150'
+}
 
 useEffect(() => {
   fetch('http://localhost:3000/api/hello')
@@ -14,10 +23,31 @@ useEffect(() => {
 
 
   return (
-    <>
-      <h1>Hi</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* <Route path="/" element={<ProjectCard project={data} />} /> */}
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/signup" element={<SignUpForm />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
 export default App
+
+
+
+
+
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/project/:id" element={<ProjectDetail />} />
+//         <Route path="/admin" element={<AdminDashboard />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
