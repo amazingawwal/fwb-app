@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import './App.css';
 // import ProjectCard from './components/projectCard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SignUpForm from './components/signup';
-import LoginForm from './components/login';
+import SignUpForm from './pages/signup/signup';
+import LoginForm from './pages/login/login';
+import Home from './pages/home/home';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ useEffect(() => {
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<ProjectCard project={data} />} /> */}
+        <Route path='/home' element={<Home/>}/>
         <Route path="/" element={<LoginForm />} />
         <Route path="/signup" element={<SignUpForm />} />
       </Routes>
