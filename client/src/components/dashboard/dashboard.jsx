@@ -28,8 +28,8 @@ export default function DashboardCard({username,projects}) {
   const projectList = projects.length > 0 ? projects : defaultProjects;
   const profileUsername = username.length > 0 ? username : placeholder ;
   return (
-    // max-w-xl mx-auto rounded-xl bg-white dark:bg-gray-800 shadow p-6 space-y-6
-    <div className="w-full max-w-xl mx-auto rounded-xl bg-white dark:bg-gray-800 shadow p-6 space-y-6">
+    //w-full max-w-xl mx-auto rounded-xl bg-white dark:bg-gray-800 shadow p-6 space-y-6
+    <div className=" rounded-xl bg-white dark:bg-gray-800 shadow p-6 space-y-6">
       {/* Welcome */}
       <Greetings profileUsername={profileUsername} />
 
